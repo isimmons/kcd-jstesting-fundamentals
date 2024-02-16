@@ -1,22 +1,28 @@
-async function test(title, callback) {
+async function it(title, callback) {
   try {
-    await callback()
-    console.log(`✓ ${title}`)
+    await callback();
+    console.log(`✓ ${title}`);
   } catch (error) {
-    console.error(`✕ ${title}`)
-    console.error(error)
+    console.error(`✕ ${title}`);
+    console.error(error);
   }
+}
+
+function describe(title, callback) {
+  console.log(title);
+  callback();
 }
 
 function expect(actual) {
   return {
     toBe(expected) {
       if (actual !== expected) {
-        throw new Error(`${actual} is not equal to ${expected}`)
+        throw new Error(`${actual} is not equal to ${expected}`);
       }
-    }
-  }
+    },
+  };
 }
 
-global.test = test
-global.expect = expect
+global.it = it;
+global.expect = expect;
+global.describe = describe;

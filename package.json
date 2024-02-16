@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "A repo for my JavaScript Testing Fundamentals course",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "node:watch": "node --watch",
+    "node:watch:globals": "node --watch --require ./setup-globals"
   },
   "keywords": [],
   "author": "Kent C. Dodds <me@kentcdodds.com> (https://kentcdodds.com/)",
   "license": "MIT",
   "devDependencies": {
-    "jest": "^26.6.3"
+    "jest": "^29.7.0"
   }
 }
